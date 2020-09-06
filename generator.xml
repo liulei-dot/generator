@@ -10,9 +10,14 @@
 
      -->
     <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--自动生成的文件不要注解-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
         <!-- jdbcConnection：指定如何连接到目标数据库 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/test?characterEncoding=utf-8"
+                        connectionURL="jdbc:mysql://localhost:3306/ssm?characterEncoding=utf-8"
                         userId="root"
                         password="123456">
         </jdbcConnection>
@@ -45,7 +50,7 @@
         </javaClientGenerator>
 
         <!-- 指定要逆向分析哪些表：根据表要创建javaBean -->
-        <table tableName="mybatis_test" domainObjectName="Employee"></table>
-        <table tableName="mybatis_dept" domainObjectName="Deptment"></table>
+        <table tableName="tbl_emp" domainObjectName="Employee"></table>
+        <table tableName="tbl_dept" domainObjectName="Deptment"></table>
     </context>
 </generatorConfiguration>
